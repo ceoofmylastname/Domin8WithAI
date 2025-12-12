@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Domin8WithAI | The Conversion OS</title>
 
-    <!-- Tailwind CDN (OK for now) -->
+    <!-- Tailwind CDN (fine for now) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts -->
@@ -16,15 +16,15 @@
       rel="stylesheet"
     />
 
-    <!-- Tailwind Config -->
+    <!-- Tailwind config -->
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['"Inter"', 'sans-serif'],
-              mono: ['"JetBrains Mono"', 'monospace'],
-              display: ['"Archivo"', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+              display: ['Archivo', 'sans-serif'],
             },
             colors: {
               'cyber-black': '#050505',
@@ -39,45 +39,13 @@
         },
       }
     </script>
-
-    <style>
-      body {
-        background-color: #050505;
-        color: #ffffff;
-      }
-    </style>
   </head>
 
-  <body>
-    <!-- React Mount -->
+  <body class="bg-cyber-black text-white">
+    <!-- 🔑 THIS IS REQUIRED -->
     <div id="root"></div>
 
-    <!-- SVG Filter -->
-    <svg
-      style="position: absolute; width: 0; height: 0; overflow: hidden"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <filter id="distortion">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.01 0.003"
-            numOctaves="1"
-            result="warp"
-          />
-          <feDisplacementMap
-            xChannelSelector="R"
-            yChannelSelector="G"
-            scale="30"
-            in="SourceGraphic"
-            in2="warp"
-          />
-        </filter>
-      </defs>
-    </svg>
-
-    <!-- 🔑 THIS IS THE CRITICAL LINE -->
-    <!-- This MUST exist or Vite will only build HTML -->
+    <!-- 🔑 THIS IS REQUIRED -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
