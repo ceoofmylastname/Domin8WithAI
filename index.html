@@ -1,171 +1,83 @@
 <!DOCTYPE html>
-
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Domin8WithAI | The Conversion OS</title>
 
-```
-<!-- Tailwind CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CDN (OK for now) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap"
-  rel="stylesheet"
-/>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-<!-- Tailwind Config -->
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-          mono: ['JetBrains Mono', 'monospace'],
-          display: ['Archivo', 'sans-serif'],
-        },
-        colors: {
-          'cyber-black': '#050505',
-          'cyber-gray': '#0a0a0a',
-          'electric-blue': '#007BFF',
-          'cyber-violet': '#9D00FF',
-          'neon-lime': '#CCFF00',
-          'domin8-cyan': '#00FFFF',
-          'domin8-magenta': '#FF00FF',
-        },
-        animation: {
-          blob: 'blob 10s infinite',
-          flow: 'flow 15s ease infinite',
-          'pulse-slow': 'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite',
-          'slide-up': 'slideUp 1.2s cubic-bezier(0.19,1,0.22,1) forwards',
-          'glow-pulse': 'glowPulse 3s infinite alternate',
-          'drop-8': 'drop 4s linear forwards',
-          'slash-swipe': 'slash 1.2s cubic-bezier(0.22,1,0.36,1) forwards',
-          rainbow: 'rainbow 20s linear infinite',
-        },
-        keyframes: {
-          blob: {
-            '0%': { transform: 'translate(0,0) scale(1)' },
-            '33%': { transform: 'translate(30px,-50px) scale(1.1)' },
-            '66%': { transform: 'translate(-20px,20px) scale(0.9)' },
-            '100%': { transform: 'translate(0,0) scale(1)' },
-          },
-          flow: {
-            '0%,100%': { backgroundPosition: '0% 50%' },
-            '50%': { backgroundPosition: '100% 50%' },
-          },
-          slideUp: {
-            '0%': { transform: 'translateY(60px)', opacity: '0' },
-            '100%': { transform: 'translateY(0)', opacity: '1' },
-          },
-          glowPulse: {
-            '0%': { boxShadow: '0 0 20px rgba(0,123,255,.3)' },
-            '100%': { boxShadow: '0 0 40px rgba(157,0,255,.6)' },
-          },
-          drop: {
-            '0%': { transform: 'translateY(-100%) rotate(0deg)', opacity: '0' },
-            '10%': { opacity: '0.1' },
-            '80%': { transform: 'translateY(30vh) rotate(10deg)', opacity: '0.1' },
-            '100%': { transform: 'translateY(40vh) rotate(20deg)', opacity: '0' },
-          },
-          slash: {
-            '0%': { transform: 'scaleX(0)' },
-            '100%': { transform: 'scaleX(1)' },
-          },
-          rainbow: {
-            '0%': { backgroundPosition: '0 0' },
-            '50%': { backgroundPosition: '400% 0' },
-            '100%': { backgroundPosition: '0 0' },
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Inter"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+              display: ['"Archivo"', 'sans-serif'],
+            },
+            colors: {
+              'cyber-black': '#050505',
+              'cyber-gray': '#0a0a0a',
+              'electric-blue': '#007BFF',
+              'cyber-violet': '#9D00FF',
+              'neon-lime': '#CCFF00',
+              'domin8-cyan': '#00FFFF',
+              'domin8-magenta': '#FF00FF',
+            },
           },
         },
-      },
-    },
-  };
-</script>
+      }
+    </script>
 
-<!-- Base Styles -->
-<style>
-  body {
-    background-color: #050505;
-    color: #ffffff;
-  }
-
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .cyber-scrollbar::-webkit-scrollbar {
-    width: 6px;
-  }
-  .cyber-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.25);
-    border-radius: 9999px;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    body, a, button, input, textarea {
-      cursor: none;
-    }
-    .distort-hover:hover {
-      filter: url(#distortion);
-    }
-  }
-
-  .text-gradient-domin8 {
-    background: linear-gradient(90deg, #007BFF, #9D00FF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .reveal-base {
-    opacity: 0;
-    transition: opacity .8s, transform .8s, filter .8s;
-  }
-  .reveal-active {
-    opacity: 1;
-    transform: none;
-    filter: none;
-  }
-</style>
-
-<!-- Import Map -->
-<script type="importmap">
-  {
-    "imports": {
-      "react": "https://esm.sh/react@19",
-      "react-dom/client": "https://esm.sh/react-dom@19/client",
-      "lucide-react": "https://esm.sh/lucide-react",
-      "canvas-confetti": "https://esm.sh/canvas-confetti",
-      "lenis": "https://unpkg.com/lenis@1.1.20/dist/lenis.mjs"
-    }
-  }
-</script>
-```
-
+    <style>
+      body {
+        background-color: #050505;
+        color: #ffffff;
+      }
+    </style>
   </head>
 
   <body>
+    <!-- React Mount -->
     <div id="root"></div>
 
-```
-<!-- SVG Distortion Filter -->
-<svg style="width:0;height:0;position:absolute">
-  <defs>
-    <filter id="distortion">
-      <feTurbulence type="fractalNoise" baseFrequency="0.01 0.003" />
-      <feDisplacementMap scale="30" />
-    </filter>
-  </defs>
-</svg>
-```
+    <!-- SVG Filter -->
+    <svg
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <filter id="distortion">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.01 0.003"
+            numOctaves="1"
+            result="warp"
+          />
+          <feDisplacementMap
+            xChannelSelector="R"
+            yChannelSelector="G"
+            scale="30"
+            in="SourceGraphic"
+            in2="warp"
+          />
+        </filter>
+      </defs>
+    </svg>
 
+    <!-- 🔑 THIS IS THE CRITICAL LINE -->
+    <!-- This MUST exist or Vite will only build HTML -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
