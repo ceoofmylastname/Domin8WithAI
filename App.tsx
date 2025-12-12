@@ -1,10 +1,10 @@
-const App: React.FC = () => {
+function App() {
   return (
     <>
-      <h1>Domin8WithAI</h1>
-      <p>Welcome — your app is live.</p>
+      <h1>Domin8 With AI</h1>
+      <p>Your AI-powered platform is live.</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
