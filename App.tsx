@@ -1,8 +1,8 @@
 const App: React.FC = () => {
   return (
     <>
-      {/* TEMP: basic render to fix build */}
-      <div>App Loaded</div>
+      <h1>Domin8WithAI</h1>
+      <p>Welcome — your app is live.</p>
     </>
   )
 }
