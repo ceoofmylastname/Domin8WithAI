@@ -1,191 +1,171 @@
 <!DOCTYPE html>
+
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Domin8WithAI | The Conversion OS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['"Inter"', 'sans-serif'], // Default to Inter for high-trust UI
-              mono: ['"JetBrains Mono"', 'monospace'],
-              display: ['"Archivo"', 'sans-serif'], // Aggressive Wide Sans
-            },
-            colors: {
-              'cyber-black': '#050505',
-              'cyber-gray': '#0a0a0a',
-              'electric-blue': '#007BFF',
-              'cyber-violet': '#9D00FF',
-              'neon-lime': '#CCFF00',
-              'domin8-cyan': '#00FFFF',
-              'domin8-magenta': '#FF00FF',
-            },
-            animation: {
-              'blob': 'blob 10s infinite',
-              'flow': 'flow 15s ease infinite',
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'slide-up': 'slideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards',
-              'glow-pulse': 'glowPulse 3s infinite alternate',
-              'drop-8': 'drop 4s linear forwards',
-              'slash-swipe': 'slash 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards',
-              'rainbow': 'rainbow 20s linear infinite',
-            },
-            keyframes: {
-              blob: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              },
-              flow: {
-                '0%, 100%': { backgroundPosition: '0% 50%' },
-                '50%': { backgroundPosition: '100% 50%' },
-              },
-              slideUp: {
-                '0%': { transform: 'translateY(60px)', opacity: '0' },
-                '100%': { transform: 'translateY(0)', opacity: '1' },
-              },
-              glowPulse: {
-                '0%': { boxShadow: '0 0 20px rgba(0, 123, 255, 0.3)' },
-                '100%': { boxShadow: '0 0 40px rgba(157, 0, 255, 0.6)' },
-              },
-              drop: {
-                '0%': { transform: 'translateY(-100%) rotate(0deg)', opacity: '0' },
-                '10%': { opacity: '0.1' },
-                '80%': { opacity: '0.1', transform: 'translateY(30vh) rotate(10deg)' },
-                '100%': { transform: 'translateY(40vh) rotate(20deg)', opacity: '0' },
-              },
-              slash: {
-                '0%': { transform: 'scaleX(0)' },
-                '100%': { transform: 'scaleX(1)' },
-              },
-              rainbow: {
-                '0%': { backgroundPosition: '0 0' },
-                '50%': { backgroundPosition: '400% 0' },
-                '100%': { backgroundPosition: '0 0' },
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-      }
-      
-      /* Cyber Scrollbar - Sleek, minimal, visible */
-      .cyber-scrollbar::-webkit-scrollbar {
-          width: 6px;
-      }
-      .cyber-scrollbar::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, 0.2); 
-      }
-      .cyber-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(255, 255, 255, 0.2); 
-          border-radius: 9999px;
-      }
-      .cyber-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(255, 255, 255, 0.4); 
-      }
 
-      body {
-        background-color: #050505;
-        color: #ffffff;
-      }
-      
-      /* Lenis Setup */
-      html.lenis, html.lenis body { height: auto; }
-      .lenis.lenis-smooth { scroll-behavior: auto !important; }
-      .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-      .lenis.lenis-stopped { overflow: hidden; }
-      
-      /* Hide default cursor only on hover capable devices to allow custom cursor */
-      @media (hover: hover) and (pointer: fine) {
-         body, a, button, input, textarea {
-            cursor: none;
-         }
-         /* Distortion Utility Class - Only on Desktop to save mobile performance */
-         .distort-hover:hover {
-            filter: url(#distortion);
-         }
-      }
-      
-      /* Typography Utilities for Archivo */
-      .font-stretch-ultra { font-stretch: 125%; }
-      .font-stretch-condensed { font-stretch: 75%; }
-      
-      /* Staggered Animation Delays */
-      .delay-100 { animation-delay: 100ms; }
-      .delay-200 { animation-delay: 200ms; }
-      .delay-300 { animation-delay: 300ms; }
-      .delay-500 { animation-delay: 500ms; }
-      .delay-700 { animation-delay: 700ms; }
+```
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-      /* Gradient Text Utility */
-      .text-gradient-domin8 {
-        background: linear-gradient(90deg, #007BFF, #9D00FF);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
-      }
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+  rel="stylesheet"
+/>
 
-      /* Reveal Animations */
-      .reveal-base {
-        opacity: 0;
-        transition-property: opacity, transform, filter;
-        transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-        will-change: opacity, transform;
-      }
-      
-      .reveal-active {
-        opacity: 1;
-        transform: translate(0, 0) scale(1) rotate(0deg);
-        filter: blur(0);
-      }
-
-      .reveal-fade-up { transform: translateY(60px); }
-      .reveal-scale-up { transform: scale(0.95) translateY(20px); }
-      .reveal-rotate-in { transform: perspective(1000px) rotateX(10deg) translateY(40px); opacity: 0; }
-      .reveal-blur-in { filter: blur(10px); transform: scale(0.98); }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.560.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
-    "lenis": "https://unpkg.com/lenis@1.1.20/dist/lenis.mjs",
-    "canvas-confetti": "https://esm.sh/canvas-confetti@1.9.2"
-  }
-}
+<!-- Tailwind Config -->
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+          display: ['Archivo', 'sans-serif'],
+        },
+        colors: {
+          'cyber-black': '#050505',
+          'cyber-gray': '#0a0a0a',
+          'electric-blue': '#007BFF',
+          'cyber-violet': '#9D00FF',
+          'neon-lime': '#CCFF00',
+          'domin8-cyan': '#00FFFF',
+          'domin8-magenta': '#FF00FF',
+        },
+        animation: {
+          blob: 'blob 10s infinite',
+          flow: 'flow 15s ease infinite',
+          'pulse-slow': 'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite',
+          'slide-up': 'slideUp 1.2s cubic-bezier(0.19,1,0.22,1) forwards',
+          'glow-pulse': 'glowPulse 3s infinite alternate',
+          'drop-8': 'drop 4s linear forwards',
+          'slash-swipe': 'slash 1.2s cubic-bezier(0.22,1,0.36,1) forwards',
+          rainbow: 'rainbow 20s linear infinite',
+        },
+        keyframes: {
+          blob: {
+            '0%': { transform: 'translate(0,0) scale(1)' },
+            '33%': { transform: 'translate(30px,-50px) scale(1.1)' },
+            '66%': { transform: 'translate(-20px,20px) scale(0.9)' },
+            '100%': { transform: 'translate(0,0) scale(1)' },
+          },
+          flow: {
+            '0%,100%': { backgroundPosition: '0% 50%' },
+            '50%': { backgroundPosition: '100% 50%' },
+          },
+          slideUp: {
+            '0%': { transform: 'translateY(60px)', opacity: '0' },
+            '100%': { transform: 'translateY(0)', opacity: '1' },
+          },
+          glowPulse: {
+            '0%': { boxShadow: '0 0 20px rgba(0,123,255,.3)' },
+            '100%': { boxShadow: '0 0 40px rgba(157,0,255,.6)' },
+          },
+          drop: {
+            '0%': { transform: 'translateY(-100%) rotate(0deg)', opacity: '0' },
+            '10%': { opacity: '0.1' },
+            '80%': { transform: 'translateY(30vh) rotate(10deg)', opacity: '0.1' },
+            '100%': { transform: 'translateY(40vh) rotate(20deg)', opacity: '0' },
+          },
+          slash: {
+            '0%': { transform: 'scaleX(0)' },
+            '100%': { transform: 'scaleX(1)' },
+          },
+          rainbow: {
+            '0%': { backgroundPosition: '0 0' },
+            '50%': { backgroundPosition: '400% 0' },
+            '100%': { backgroundPosition: '0 0' },
+          },
+        },
+      },
+    },
+  };
 </script>
-</head>
+
+<!-- Base Styles -->
+<style>
+  body {
+    background-color: #050505;
+    color: #ffffff;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .cyber-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .cyber-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.25);
+    border-radius: 9999px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    body, a, button, input, textarea {
+      cursor: none;
+    }
+    .distort-hover:hover {
+      filter: url(#distortion);
+    }
+  }
+
+  .text-gradient-domin8 {
+    background: linear-gradient(90deg, #007BFF, #9D00FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .reveal-base {
+    opacity: 0;
+    transition: opacity .8s, transform .8s, filter .8s;
+  }
+  .reveal-active {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+</style>
+
+<!-- Import Map -->
+<script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@19",
+      "react-dom/client": "https://esm.sh/react-dom@19/client",
+      "lucide-react": "https://esm.sh/lucide-react",
+      "canvas-confetti": "https://esm.sh/canvas-confetti",
+      "lenis": "https://unpkg.com/lenis@1.1.20/dist/lenis.mjs"
+    }
+  }
+</script>
+```
+
+  </head>
+
   <body>
     <div id="root"></div>
-    <!-- SVG Filter for Liquid Distortion Effect -->
-    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="distortion">
-          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.003" numOctaves="1" result="warp" />
-          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
-        </filter>
-      </defs>
-    </svg>
+
+```
+<!-- SVG Distortion Filter -->
+<svg style="width:0;height:0;position:absolute">
+  <defs>
+    <filter id="distortion">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01 0.003" />
+      <feDisplacementMap scale="30" />
+    </filter>
+  </defs>
+</svg>
+```
+
   </body>
 </html>
