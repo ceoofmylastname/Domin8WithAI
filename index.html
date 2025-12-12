@@ -1,51 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Domin8WithAI | The Conversion OS</title>
-
-    <!-- Tailwind CDN (fine for now) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Tailwind config -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['JetBrains Mono', 'monospace'],
-              display: ['Archivo', 'sans-serif'],
-            },
-            colors: {
-              'cyber-black': '#050505',
-              'cyber-gray': '#0a0a0a',
-              'electric-blue': '#007BFF',
-              'cyber-violet': '#9D00FF',
-              'neon-lime': '#CCFF00',
-              'domin8-cyan': '#00FFFF',
-              'domin8-magenta': '#FF00FF',
-            },
-          },
-        },
-      }
-    </script>
   </head>
-
-  <body class="bg-cyber-black text-white">
-    <!-- 🔑 THIS IS REQUIRED -->
+  <body class="bg-black text-white">
+    <!-- React mounts here -->
     <div id="root"></div>
 
-    <!-- 🔑 THIS IS REQUIRED -->
+    <!-- This boots React -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
